@@ -1,18 +1,10 @@
 # Word-Guess-Game
-#Pseudocode Requirements
-1. front end interface
-    wireframe out pic
-        . Header CSS design Hairband font emojio horns, hairspray can, centered, bottom border
-        . two columns in middle of page (---) sperated. Bootstrap grind 1 two, two columns
-            default pic on left column top - dymanic change as per game
-            game text in right column
-2. Functionality
-    - calculate number of wins based on responses
-    - print "_ _ _ _" line changing as per possible answer
-    - set default number of guesses, decrement number as per wrong answers
-        not allowing more then 1 wrong letter to be used
-        printing out wrond letter guess
-    - if answer before number of guess runs out, Print title of song and show pic of band
-        else print sorry wrong listen to the new song, play new song
-    - when open page start new song to be guessed tied into name of band _ _ _ _  guess
+    This project is a hangman game taking user keyboard input to evaluate if they letter guessed matched the letters in the words. This game is using Hank William Jr song titles, as the theme of the game. The project is useful to relax and enjoy trying to learn some Hank Williams Jr songs.
+#Getting Started
+    Download a copy of the game using github. Open in browser, press any key to begin. You have 12 remaining guess to attempt to guess the Hank Williams Jr song title.If you are correct the song will play and The number of wins will go up. It also shows the letters already guessed. If you lose it will restart the game for you to give it another try.
+#Getting Help
+    If you require help contact test@test.com
+#Maintains and Contributes
+    If you would like to help contribute to the game, but email test@test.com
+
 
