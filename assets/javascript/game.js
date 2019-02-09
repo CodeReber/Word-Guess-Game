@@ -14,16 +14,22 @@ var words;
 var word;
 var wrongGuess;
 var remainingLetters;
+var audio = new Audio('assets/audio/Born_To_Boogie.mp3');
+var audio1 = new Audio('assets/audio/family_tradition.mp3');
+var audio2 = new Audio('assets/audio/Country_Boy_Can_Survive.mp3');
+var bogpic = document.createElement("img");
+bogpic.setAttribute("src", "assests/img/born2boogie.png");
+
+
 //Set global vars
 function gamestart(){
-    numOfGuess = 12;
-   
+numOfGuess = 12;
 
 
 // for (var i=97; i<123; i++)
 //     AllChars.push(String.fromCharCode(i));
 //create array of words
-words = ["dog","cat","bird"];
+words = ["borntoboogie","countryboycansurvive","familytradition"];
 
 //Choose word randomly, define number of char in word
 word = words[Math.floor(Math.random() * words.length)];
@@ -32,7 +38,7 @@ console.log(remainingLetters);
 //Make array for answer
 answer = [];
 for (var i = 0; i < word.length; i++) {
-    answer[i] = "_";
+    answer[i] = " _ ";
 }
 wrongGuess = []
 //Set up user keyboard input compare with word update remaining
@@ -46,11 +52,33 @@ document.onkeyup = function(){
             answer[j] = guess;
             remainingLetters--;
             var win = remainingLetters;
-            if(win === 0){
+            if(win === 0 && word === "borntoboogie"){
                 numWin++;
+                audio2.pause();
+                audio1.pause();
+                audio.play();
                 gamestart();
+                document.getElementById("pic").src = "assets/img/born2boogie.png";
+                document.getElementById("answer").innerHTML = "Correct!!! Born to Boogie";
             }
-            // console.log()
+            else if(win === 0 && word === "countryboycansurvive"){
+                numWin++;
+                audio1.pause();
+                audio.pause();
+                audio2.play();
+                gamestart();
+                document.getElementById("pic").src = "assets/img/countryboy.png";
+                document.getElementById("answer").innerHTML = "Correct!!! Country Boy Can Survive";
+            }
+            else if(win === 0 && word === "familytradition"){
+                numWin++;
+                audio.pause();
+                audio2.pause();
+                audio1.play();
+                gamestart();
+                document.getElementById("pic").src = "assets/img/familytradition.png";
+                document.getElementById("answer").innerHTML = "Correct!!! Family Tradition";
+            }
         }
         else{
             if(!wrongGuess.includes(guess) && !word.includes(guess)){

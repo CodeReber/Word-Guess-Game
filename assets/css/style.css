@@ -1,0 +1,24 @@
+.col-md-6{
+    border-style: dotted;
+}
+body{
+    background-color: black;
+}
+.page-header{
+    text-align: center;
+}
+h1{
+    font-family: 'Lobster', cursive;
+    color: bisque;
+}
+p{
+    color: whitesmoke;
+}
+#pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#answer{
+    justify-content: center;
+}
