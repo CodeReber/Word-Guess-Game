@@ -17,12 +17,12 @@ var remainingLetters;
 var audio = new Audio('assets/audio/Born_To_Boogie.mp3');
 var audio1 = new Audio('assets/audio/family_tradition.mp3');
 var audio2 = new Audio('assets/audio/Country_Boy_Can_Survive.mp3');
-var lettersGuessed = [];
 
 
 //Set global vars
 function gamestart(){
 numOfGuess = 12;
+lettersGuessed = [];
 
 
 // for (var i=97; i<123; i++)
@@ -45,7 +45,7 @@ wrongGuess = []
 document.onkeyup = function(event){
 
      if(event.keyCode >= 65 && event.keyCode <= 90){
-        if(lettersGuessed.indexOf(event.keyCode === -1)){
+        if(lettersGuessed.indexOf(event.keyCode) === -1){
             lettersGuessed.push(event.keyCode)
         
     var guess = String.fromCharCode(event.keyCode).toLocaleLowerCase();
@@ -55,7 +55,6 @@ document.onkeyup = function(event){
             answer[j] = guess;
             remainingLetters--;
             var win = remainingLetters;
-            console.log(win);
             if(win === 0 && word === "borntoboogie"){
                 numWin++;
                 audio2.pause();
